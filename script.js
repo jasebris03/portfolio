@@ -166,15 +166,10 @@ function createExperienceCard(job) {
 
 function updateContactSection(contact) {
     const contactEmail = document.getElementById('contact-email');
-    const contactPhone = document.getElementById('contact-phone');
     const contactLocation = document.getElementById('contact-location');
     
     if (contactEmail && contact.email) {
         contactEmail.textContent = contact.email;
-    }
-    
-    if (contactPhone && contact.phone) {
-        contactPhone.textContent = contact.phone;
     }
     
     if (contactLocation && contact.location) {
