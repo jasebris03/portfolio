@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Merefield - Platform Engineer & Developer</title>
+    <meta name="description" content="Platform Engineer with expertise in Kubernetes, Terraform, and cloud infrastructure. Building scalable solutions with a dash of humor.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">JM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight" id="hero-name">Jason Merefield</span>
+                </h1>
+                <h2 class="hero-subtitle" id="hero-title">Platform Engineer & Developer</h2>
+                <p class="hero-description" id="hero-summary">
+                    I build scalable infrastructure, wrangle Kubernetes clusters, and occasionally debug my own code 
+                    (because yes, even engineers have those moments 😅).
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Experience</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="card-icon">🚀</div>
+                    <div class="card-text">Deploying dreams, one container at a time</div>
+                </div>
+                <div class="floating-card">
+                    <div class="card-icon">⚡</div>
+                    <div class="card-text">Making infrastructure as code, not as chaos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p id="about-summary">
+                        I'm a Platform Engineer who loves turning complex infrastructure problems into elegant, 
+                        scalable solutions. When I'm not knee-deep in YAML files or debugging Kubernetes pods, 
+                        you'll find me exploring new technologies and occasionally explaining to my family that 
+                        "the cloud" isn't actually in the sky.
+                    </p>
+                    <p>
+                        My journey in tech has taught me that the best solutions are often the simplest ones 
+                        (and that good documentation is worth its weight in gold). I believe in building 
+                        systems that are not just functional, but also maintainable and developer-friendly.
+                    </p>
+                </div>
+                <div class="skills-section">
+                    <h3>Technologies I Work With</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Infrastructure & Cloud</h4>
+                            <div class="skill-tags" id="infrastructure-skills">
+                                <!-- Skills will be loaded dynamically -->
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Programming & Languages</h4>
+                            <div class="skill-tags" id="programming-skills">
+                                <!-- Skills will be loaded dynamically -->
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Tools & Platforms</h4>
+                            <div class="skill-tags" id="tools-skills">
+                                <!-- Skills will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">
+                A journey through my career - from data analytics to platform engineering. 
+                Each role has shaped my expertise in building scalable, cloud-native solutions.
+            </p>
+            <div class="experience-grid" id="experience-grid">
+                <!-- Experience will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">
+                Whether you want to discuss infrastructure, collaborate on a project, 
+                or just chat about the latest tech trends, I'd love to hear from you!
+            </p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p id="contact-email">Ready to start a conversation</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p id="contact-location">Sydney, Australia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/jasonmerefield" class="contact-link linkedin" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i>
+                        <span>Connect on LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/jasebris03" class="contact-link github" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                        <span>View on GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Jason Merefield. Built with ❤️ and probably some ☕.</p>
+                <p class="footer-quote">"Infrastructure as Code, Life as Adventure"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

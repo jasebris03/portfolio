@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Bootstrap Guide - Jason Merefield</title>
+    <meta name="description" content="A comprehensive guide to bootstrapping AWS for startups - from account creation to Organizations and Control Tower setup.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .guide-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .step-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .instructions {
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .instructions h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .instructions ol {
+            padding-left: 1.5rem;
+        }
+        
+        .instructions li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        .warning-box {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .warning-box h4 {
+            color: #92400e;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .warning-box p {
+            color: #92400e;
+            margin: 0;
+        }
+        
+        .info-box {
+            background: #dbeafe;
+            border: 1px solid #3b82f6;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .info-box h4 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .info-box p {
+            color: #1e40af;
+            margin: 0;
+        }
+        
+        .resource-links {
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .resource-links h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .resource-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .resource-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .resource-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .resource-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .estimated-time {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">JM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Portfolio</a></li>
+                <li><a href="#aws-bootstrap" class="nav-link">AWS Bootstrap</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    AWS Bootstrap Guide
+                </h1>
+                <h2 class="hero-subtitle">Setting up AWS for Your Startup</h2>
+                <p class="hero-description">
+                    A step-by-step guide to bootstrap AWS from scratch - because every cloud journey starts with a single account 
+                    (and probably a few billing alerts 😅).
+                </p>
+                <div class="hero-buttons">
+                    <a href="#guide" class="btn btn-primary">Start Bootstrap</a>
+                    <a href="index.html" class="btn btn-secondary">Back to Portfolio</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="card-icon">☁️</div>
+                    <div class="card-text">From zero to cloud hero</div>
+                </div>
+                <div class="floating-card">
+                    <div class="card-icon">🔐</div>
+                    <div class="card-text">Security first, questions later</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="guide" class="guide-content">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+            
+            <div class="info-box">
+                <h4><i class="fas fa-info-circle"></i> About This Guide</h4>
+                <p>This guide is designed for IT professionals who understand basic cloud concepts but need a clear path to set up AWS properly for a startup. We'll cover account creation, Organizations, IAM Identity Center, and optionally Control Tower.</p>
+            </div>
+
+            <!-- Step 1: AWS Account Creation -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="estimated-time">⏱️ 15-30 minutes</div>
+                <h3 class="step-title">Create Your AWS Account</h3>
+                <p class="step-description">
+                    The foundation of your cloud journey. This is where you'll provide payment information and create your root account. 
+                    Don't worry, AWS won't charge you for just existing (yet).
+                </p>
+                
+                <div class="instructions">
+                    <h4>Step-by-Step Instructions:</h4>
+                    <ol>
+                        <li>Go to <a href="https://aws.amazon.com/" target="_blank">aws.amazon.com</a> and click "Create an AWS Account"</li>
+                        <li>Enter your email address and choose an account name (this will be your account alias)</li>
+                        <li>Choose "Personal" account type (you can change this later)</li>
+                        <li>Fill in your contact information</li>
+                        <li>Add a payment method (credit card required)</li>
+                        <li>Complete identity verification (phone call or SMS)</li>
+                        <li>Choose a support plan (start with "Free" tier)</li>
+                        <li>Wait for account activation (usually immediate)</li>
+                    </ol>
+                </div>
+
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important Notes</h4>
+                    <p>• Use a business email address, not a personal one<br>
+                    • Keep your root account credentials secure - you'll rarely use them<br>
+                    • Enable MFA on your root account immediately after creation</p>
+                </div>
+
+                <div class="resource-links">
+                    <h4>📚 Official AWS Documentation</h4>
+                    <ul>
+                        <li><a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html" target="_blank"><i class="fas fa-external-link-alt"></i>Creating an AWS Account</a></li>
+                        <li><a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html#manage-acct-creating-steps" target="_blank"><i class="fas fa-external-link-alt"></i>Account Creation Steps</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 2: AWS Organizations -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="estimated-time">⏱️ 10-15 minutes</div>
+                <h3 class="step-title">Set Up AWS Organizations</h3>
+                <p class="step-description">
+                    AWS Organizations helps you centrally manage multiple AWS accounts. Think of it as a family tree for your cloud accounts - 
+                    one parent account managing multiple child accounts for different purposes.
+                </p>
+                
+                <div class="instructions">
+                    <h4>Step-by-Step Instructions:</h4>
+                    <ol>
+                        <li>Sign in to your AWS Management Console</li>
+                        <li>Search for "Organizations" in the service search bar</li>
+                        <li>Click "Create organization"</li>
+                        <li>Choose "All features" (includes consolidated billing and advanced account management)</li>
+                        <li>Review the terms and click "Create organization"</li>
+                        <li>Note your Organization ID (you'll need this later)</li>
+                    </ol>
+                </div>
+
+                <div class="info-box">
+                    <h4><i class="fas fa-lightbulb"></i> Pro Tip</h4>
+                    <p>Start with "All features" enabled. You can always disable features later, but it's harder to enable them once you have accounts in your organization.</p>
+                </div>
+
+                <div class="resource-links">
+                    <h4>📚 Official AWS Documentation</h4>
+                    <ul>
+                        <li><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tutorials_basic.html" target="_blank"><i class="fas fa-external-link-alt"></i>AWS Organizations Tutorial</a></li>
+                        <li><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_create.html" target="_blank"><i class="fas fa-external-link-alt"></i>Creating an Organization</a></li>
+                    </ul>
+                </div>
+
+                <div class="instructions" style="margin-top:1.5rem;">
+                    <h4><i class="fab fa-terraform"></i> Terraform Sample: AWS Organizations</h4>
+                    <p>Want to automate your AWS Organizations setup? Here's a basic Terraform example to get you started. (You'll need to run this from your management account.)</p>
+                    <pre style="background:#222;color:#fff;padding:1rem;border-radius:10px;overflow-x:auto;"><code>provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_organizations_organization" "main" {
+  feature_set = "ALL"
+}
+
+resource "aws_organizations_account" "dev" {
+  name      = "MyCompany-Dev"
+  email     = "dev+aws@mycompany.com"
+  parent_id = aws_organizations_organization.main.roots[0].id
+}
+
+resource "aws_organizations_account" "prod" {
+  name      = "MyCompany-Prod"
+  email     = "prod+aws@mycompany.com"
+  parent_id = aws_organizations_organization.main.roots[0].id
+}
+</code></pre>
+                    <div style="margin-top:0.5rem;font-size:0.95em;">
+                        <a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_organization" target="_blank">Terraform: aws_organizations_organization</a> |
+                        <a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_account" target="_blank">aws_organizations_account</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Create Member Accounts -->
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="estimated-time">⏱️ 20-30 minutes</div>
+                <h3 class="step-title">Create Member Accounts</h3>
+                <p class="step-description">
+                    Now let's create some member accounts for different purposes. This is where you start thinking about account separation 
+                    - development, staging, production, etc. Because putting everything in one account is like putting all your eggs in one basket, 
+                    except the basket is on fire.
+                </p>
+                
+                <div class="instructions">
+                    <h4>Step-by-Step Instructions:</h4>
+                    <ol>
+                        <li>In AWS Organizations console, click "Accounts" → "Create account"</li>
+                        <li>Create accounts for:
+                            <ul>
+                                <li><strong>Development</strong> - for development work</li>
+                                <li><strong>Staging</strong> - for testing before production</li>
+                                <li><strong>Production</strong> - for live applications</li>
+                                <li><strong>Security</strong> - for security tools and monitoring</li>
+                            </ul>
+                        </li>
+                        <li>For each account, provide:
+                            <ul>
+                                <li>Account name (e.g., "MyCompany-Dev")</li>
+                                <li>Email address (must be unique and valid)</li>
+                                <li>IAM role name (default is fine)</li>
+                            </ul>
+                        </li>
+                        <li>Wait for account creation (5-10 minutes per account)</li>
+                        <li>Note the account IDs and email addresses</li>
+                    </ol>
+                </div>
+
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Account Naming Convention</h4>
+                    <p>Use a consistent naming convention like: [Company]-[Environment]-[Purpose]<br>
+                    Example: MyCompany-Dev-Apps, MyCompany-Prod-Data</p>
+                </div>
+
+                <div class="resource-links">
+                    <h4>📚 Official AWS Documentation</h4>
+                    <ul>
+                        <li><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html" target="_blank"><i class="fas fa-external-link-alt"></i>Creating Member Accounts</a></li>
+                        <li><a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html" target="_blank"><i class="fas fa-external-link-alt"></i>Accessing Member Accounts</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 4: IAM Identity Center -->
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="estimated-time">⏱️ 30-45 minutes</div>
+                <h3 class="step-title">Configure IAM Identity Center</h3>
+                <p class="step-description">
+                    IAM Identity Center (formerly AWS SSO) is your central identity provider. It's like having one key that opens all the doors 
+                    in your cloud mansion, but with proper security controls.
+                </p>
+                
+                <div class="instructions">
+                    <h4>Step-by-Step Instructions:</h4>
+                    <ol>
+                        <li>In your management account, search for "IAM Identity Center"</li>
+                        <li>Click "Enable" to set up IAM Identity Center</li>
+                        <li>Choose your identity source:
+                            <ul>
+                                <li><strong>Identity Center directory</strong> (recommended for startups)</li>
+                                <li>Active Directory (if you have on-prem AD)</li>
+                                <li>External identity provider (if using Okta, Azure AD, etc.)</li>
+                            </ul>
+                        </li>
+                        <li>Create your first user (yourself)</li>
+                        <li>Create a permission set for administrators</li>
+                        <li>Assign the permission set to your user and accounts</li>
+                        <li>Set up MFA for your user</li>
+                    </ol>
+                </div>
+
+                <div class="info-box">
+                    <h4><i class="fas fa-lightbulb"></i> Permission Set Strategy</h4>
+                    <p>Create permission sets like: Administrator, Developer, ReadOnly. Start with Administrator for yourself, then add others as needed.</p>
+                </div>
+
+                <div class="resource-links">
+                    <h4>📚 Official AWS Documentation</h4>
+                    <ul>
+                        <li><a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html" target="_blank"><i class="fas fa-external-link-alt"></i>IAM Identity Center Getting Started</a></li>
+                        <li><a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html" target="_blank"><i class="fas fa-external-link-alt"></i>Permission Sets</a></li>
+                    </ul>
+                </div>
+
+                <div class="instructions" style="margin-top:1.5rem;">
+                    <h4><i class="fab fa-terraform"></i> Terraform Sample: IAM Identity Center (SSO)</h4>
+                    <p>Here's a basic example to create an IAM Identity Center user and permission set. (Requires AWS provider v5+.)</p>
+                    <pre style="background:#222;color:#fff;padding:1rem;border-radius:10px;overflow-x:auto;"><code>provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_identitystore_user" "admin" {
+  identity_store_id = data.aws_ssoadmin_instances.main.identity_store_ids[0]
+  user_name         = "jason"
+  display_name      = "Jason Merefield"
+  emails {
+    value = "jason@mycompany.com"
+    primary = true
+  }
+}
+
+resource "aws_ssoadmin_permission_set" "admin" {
+  name             = "AdministratorAccess"
+  instance_arn     = data.aws_ssoadmin_instances.main.arns[0]
+  description      = "Admin access for all accounts"
+  session_duration = "PT8H"
+  managed_policies = ["arn:aws:iam::aws:policy/AdministratorAccess"]
+}
+</code></pre>
+                    <div style="margin-top:0.5rem;font-size:0.95em;">
+                        <a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/identitystore_user" target="_blank">Terraform: aws_identitystore_user</a> |
+                        <a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssoadmin_permission_set" target="_blank">aws_ssoadmin_permission_set</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Optional - Control Tower -->
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <div class="estimated-time">⏱️ 45-60 minutes</div>
+                <h3 class="step-title">Set Up AWS Control Tower (Optional)</h3>
+                <p class="step-description">
+                    Control Tower is like having a security guard, compliance officer, and auditor all rolled into one automated service. 
+                    It's more complex to set up but provides enterprise-grade governance from day one.
+                </p>
+                
+                <div class="instructions">
+                    <h4>Step-by-Step Instructions:</h4>
+                    <ol>
+                        <li>Ensure you have a clean Organizations setup (no existing member accounts)</li>
+                        <li>Search for "Control Tower" in the AWS console</li>
+                        <li>Click "Set up Control Tower"</li>
+                        <li>Choose your home region (where Control Tower will be deployed)</li>
+                        <li>Configure your organizational units (OUs):
+                            <ul>
+                                <li>Security OU (for security accounts)</li>
+                                <li>Sandbox OU (for development/testing)</li>
+                            </ul>
+                        </li>
+                        <li>Set up your audit and logging accounts</li>
+                        <li>Review and launch Control Tower</li>
+                        <li>Wait for deployment (30-45 minutes)</li>
+                    </ol>
+                </div>
+
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important Considerations</h4>
+                    <p>• Control Tower requires a clean Organizations setup<br>
+                    • It will create additional accounts for logging and audit<br>
+                    • Some regions may not support all Control Tower features<br>
+                    • Consider this for companies with compliance requirements</p>
+                </div>
+
+                <div class="resource-links">
+                    <h4>📚 Official AWS Documentation</h4>
+                    <ul>
+                        <li><a href="https://docs.aws.amazon.com/controltower/latest/userguide/getting-started-with-control-tower.html" target="_blank"><i class="fas fa-external-link-alt"></i>Control Tower Getting Started</a></li>
+                        <li><a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-tower-concepts.html" target="_blank"><i class="fas fa-external-link-alt"></i>Control Tower Concepts</a></li>
+                    </ul>
+                </div>
+
+                <div class="instructions" style="margin-top:1.5rem;">
+                    <h4><i class="fab fa-terraform"></i> Terraform Sample: AWS Control Tower</h4>
+                    <p>Control Tower can be managed with Terraform using the <a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/controltower_landing_zone" target="_blank">aws_controltower_landing_zone</a> resource (in preview as of 2024). Here's a minimal example:</p>
+                    <pre style="background:#222;color:#fff;padding:1rem;border-radius:10px;overflow-x:auto;"><code>provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_controltower_landing_zone" "main" {
+  # This resource is in preview and may require additional configuration
+  # See the Terraform Registry for the latest usage
+}
+</code></pre>
+                    <div style="margin-top:0.5rem;font-size:0.95em;">
+                        <a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/controltower_landing_zone" target="_blank">Terraform: aws_controltower_landing_zone</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="step-card">
+                <div class="step-number">🎯</div>
+                <h3 class="step-title">What's Next?</h3>
+                <p class="step-description">
+                    Congratulations! You've successfully bootstrapped AWS for your startup. Here are some recommended next steps:
+                </p>
+                
+                <div class="instructions">
+                    <h4>Recommended Next Steps:</h4>
+                    <ol>
+                        <li><strong>Set up billing alerts</strong> - Because surprise bills are never fun</li>
+                        <li><strong>Configure CloudTrail</strong> - For audit logging and security</li>
+                        <li><strong>Set up monitoring</strong> - CloudWatch for basic monitoring</li>
+                        <li><strong>Create backup strategies</strong> - Before you need them</li>
+                        <li><strong>Document your setup</strong> - For future team members</li>
+                        <li><strong>Plan your CI/CD pipeline</strong> - GitHub Actions, AWS CodePipeline, etc.</li>
+                    </ol>
+                </div>
+
+                <div class="info-box">
+                    <h4><i class="fas fa-lightbulb"></i> Pro Tips</h4>
+                    <p>• Start with the basics and add complexity as needed<br>
+                    • Document everything - your future self will thank you<br>
+                    • Consider using Infrastructure as Code (Terraform, CDK) from the beginning<br>
+                    • Set up proper tagging strategies early</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Jason Merefield. Built with ❤️ and probably some ☕.</p>
+                <p class="footer-quote">"Infrastructure as Code, Life as Adventure"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

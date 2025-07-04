@@ -1,0 +1,132 @@
+{
+  "personal_info": {
+    "name": "Jason Merefield",
+    "title": "Senior Platform Engineer | Cloud-Native Architect | DevOps Leader",
+    "summary": "Platform Engineer with 10+ years of experience designing and delivering secure, scalable, and highly available cloud platforms across AWS and Azure. Skilled in infrastructure automation (Terraform, CDK), CI/CD pipelines (GitHub Actions, Bitbucket, Azure DevOps), and containerisation (Docker, Kubernetes, ECS/EKS). Strong background in software and data engineering, passionate about DevOps, observability, and platform adoption.",
+    "experience": [
+      {
+        "company": "Orkestra Energy",
+        "location": "Remote",
+        "title": "Staff Platform Engineer",
+        "date": "October 2024 - Current",
+        "responsibilities": [
+          "Maintain and improve CICD pipelines (GitHub Actions and CDK builds)",
+          "Maintain and improve Backend platform (FastAPI, ECS, DB Proxy/Instances, Lambda)",
+          "Implement and maintain observability via Sentry IO, CloudWatch, X-Ray, OTEL"
+        ]
+      },
+      {
+        "company": "BrainEye",
+        "location": "Sydney",
+        "title": "Lead Cloud Engineer",
+        "date": "November 2022 - October 2024",
+        "responsibilities": [
+          "Designed serverless backend platform using event-driven architecture",
+          "Built multi-region environments with custom Cognito integration",
+          "Developed Data Lake for analytics using App telemetry",
+          "Configured CI/CD from BitBucket to multiple AWS environments"
+        ]
+      },
+      {
+        "company": "Bain & Company",
+        "location": "Sydney",
+        "title": "Senior Software Engineer, Platform, Global Engineering",
+        "date": "July 2021 - November 2022",
+        "responsibilities": [
+          "Built secure Kubernetes deployment platform on AWS",
+          "Developed GitHub Actions pipelines for full SDLC",
+          "Provided DevOps consulting across AWS and Azure projects"
+        ]
+      },
+      {
+        "company": "Bain & Company",
+        "location": "Sydney",
+        "title": "Senior Associate, Data Integration",
+        "date": "April 2020 - June 2021",
+        "responsibilities": [
+          "Supported Advanced Analytics Group in Data Science and Cloud Engineering",
+          "Consulted on embedded client projects with a focus on data engineering"
+        ]
+      },
+      {
+        "company": "Business Minds / QVARTZ Analytics",
+        "location": "Sydney",
+        "title": "Team Leader in Analytics",
+        "date": "April 2019 - March 2020",
+        "responsibilities": [
+          "Led analytics team for Big 4 bank engagement",
+          "Performed customer segmentation, insights and campaign analytics"
+        ]
+      },
+      {
+        "company": "Mojo Power",
+        "location": "Sydney",
+        "title": "Head of IT & Development",
+        "date": "April 2018 - March 2019",
+        "responsibilities": [
+          "Managed IT team, vendors and suppliers",
+          "Built cloud-based internal tools using AWS",
+          "Delivered analytics to executive team"
+        ]
+      },
+      {
+        "company": "Mojo Power",
+        "location": "Sydney",
+        "title": "Manager of Data & Analytics",
+        "date": "April 2015 - April 2018",
+        "responsibilities": [
+          "Built cost-optimised, serverless AWS solutions",
+          "Led analytics and forecasting team"
+        ]
+      },
+      {
+        "company": "Alinta Energy",
+        "location": "Sydney",
+        "title": "Senior Commercial Analyst",
+        "date": "May 2014 - Jan 2015",
+        "responsibilities": [
+          "Provided analytics to commercial and marketing teams",
+          "Developed load forecasting tools"
+        ]
+      },
+      {
+        "company": "Australian Power & Gas",
+        "location": "Sydney",
+        "title": "Marketing Analyst",
+        "date": "August 2011 - April 2014",
+        "responsibilities": [
+          "Built pricing and segmentation models",
+          "Delivered insights to regulatory and financial teams"
+        ]
+      },
+      {
+        "company": "ROAM Consulting",
+        "location": "Sydney / Brisbane",
+        "title": "IS Manager",
+        "date": "August 2004 - July 2011",
+        "responsibilities": [
+          "Designed and developed software systems",
+          "Supported consulting projects with modelling and tech solutions"
+        ]
+      }
+    ],
+    "skills": [
+      "AWS", "Azure", "Terraform", "CDK", "CloudFormation", "GitHub Actions", "BitBucket Pipelines", "AWS CodePipeline", "Docker", "Kubernetes", "ECS", "EKS", "Helm", "Lambda", "Step Functions", "FastAPI", "Sentry", "CloudWatch", "X-Ray", "OTEL", "Hashicorp Vault", "Snyk", "API Gateway", "SQLAlchemy"
+    ],
+    "education": [],
+    "contact": {
+      "email": "jmerefield@gmail.com",
+      "location": "Northmead, NSW, 2152"
+    },
+    "certifications": [
+      "AWS Certified (details not specified in resume)"
+    ],
+    "languages": [
+      "Python", "Node JS", "Bash", "SQL"
+    ]
+  },
+  "social_links": {
+    "linkedin": "https://www.linkedin.com/in/jasonmerefield",
+    "github": "https://github.com/jasebris03"
+  }
+}
