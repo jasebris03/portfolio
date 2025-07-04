@@ -12,7 +12,7 @@ git init
 git add .
 git commit -m "Initial portfolio commit"
 git branch -M main
-git remote add origin https://github.com/jasebris03/jm-portfolio.git
+git remote add origin https://github.com/jasebris03/portfolio.git
 git push -u origin main
 ```
 
@@ -24,7 +24,7 @@ git push -u origin main
 5. Choose "main" branch and "/ (root)" folder
 6. Click "Save"
 
-Your site will be available at: `https://jasebris03.github.io/jm-portfolio`
+Your site will be available at: `https://jasebris03.github.io/portfolio`
 
 ### 2. Netlify (Free Tier)
 

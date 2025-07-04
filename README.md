@@ -42,8 +42,8 @@ jm-portfolio/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/jasebris03/jm-portfolio.git
-   cd jm-portfolio
+   git clone https://github.com/jasebris03/portfolio.git
+   cd portfolio
    ```
 
 2. **Extract CV data** (optional - data is already included)
@@ -78,7 +78,7 @@ jm-portfolio/
    - Navigate to "Pages" section
    - Select "Deploy from a branch"
    - Choose `main` branch and `/ (root)` folder
-   - Your site will be available at `https://jasebris03.github.io/jm-portfolio`
+   - Your site will be available at `https://jasebris03.github.io/portfolio`
 
 #### Option 2: Netlify
 
@@ -180,7 +180,7 @@ While this is a personal portfolio, suggestions and improvements are welcome! Fe
 
 - **LinkedIn**: [Jason Merefield](https://www.linkedin.com/in/jasonmerefield)
 - **GitHub**: [jasebris03](https://github.com/jasebris03)
-- **Portfolio**: [Live Site](https://jasebris03.github.io/jm-portfolio)
+- **Portfolio**: [Live Site](https://jasebris03.github.io/portfolio)
 
 ---
 
